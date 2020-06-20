@@ -1,0 +1,51 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.clock {
+text-align: center ;
+margin-top: 20px;
+margin-bottom: 20px;
+padding-left: 20px;
+}
+.timezone {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.timezone-title {
+  color: rgb(220, 230, 32);
+  margin-bottom: 10px;
+}
+.label-location {
+  color: rgb(70, 166, 74);
+  font-weight: 600;
+}
+.label-zone {
+  font-style:italic;
+}
+
+.container {
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+}
+.item {
+  width: 500px;
+}
+
+.button {
+padding: 5px 20px;
+background-color: rgb(152, 217, 102);
+outline: none;
+color: white;
+border: none;
+border-radius: 5px;
+margin-top: 10px;
+cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(45, 99, 3);
+  transition: 0.5s all;
+}
