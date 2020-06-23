@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./styles.css";
-import AnalogClock, { Themes } from "react-analog-clock";
 import TimeZone from "./components/TimeZone.js";
-import moment from "moment";
-
-require("moment-timezone");
+import Clock from "./components/Clock";
 
 export default function App() {
   const [timezone, setTimezone] = useState([
@@ -26,31 +23,10 @@ export default function App() {
     setTimezone(copyArray);
   };
 
-  let m = moment();
-
   return (
     <div className="App">
       <TimeZone handleTimeZone={handleTimeZone} />
-      <div className="container">
-        {timezone.map(zone => (
-          <>
-            <div className="item">
-              <div className="clock">
-                <AnalogClock theme={Themes.dark} gmtOffset={zone.value} />
-              </div>
-              <label className="label-location">
-                {m.tz(zone.location).format("YYYY-MM-DD")}
-              </label>
-              <br />
-              <label className="label-zone">{zone.label}</label>
-              <br />
-              <button className="button" onClick={() => handleClick(zone)}>
-                Delete
-              </button>
-            </div>
-          </>
-        ))}
-      </div>
+      <Clock timezone={timezone} handleClick={handleClick} />
     </div>
   );
 }
